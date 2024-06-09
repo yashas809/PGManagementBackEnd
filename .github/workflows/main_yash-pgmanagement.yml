@@ -1,8 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy JAR app to Azure Web Apps - yash-pgmanagement
-
 
 on:
   push:
@@ -26,6 +22,8 @@ jobs:
         run: echo "PGMANAGEMENT=${{ secrets.GITHUBTOKENUTILITY }}" >> $GITHUB_ENV
 
       - name: Build with Maven
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUBTOKENUTILITY }}
         run: mvn clean install
 
       - name: Upload artifact for deployment job
@@ -63,4 +61,3 @@ jobs:
           app-name: 'yash-pgmanagement'
           slot-name: 'Production'
           package: '*.jar'
-
