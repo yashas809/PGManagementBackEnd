@@ -16,7 +16,7 @@ jobs:
       - name: Set up Java version
         uses: actions/setup-java@v1
         with:
-          java-version: '17'
+          java-version: '21'
             
       - name: Add PGMANAGEMENT secret
         run: echo "PGMANAGEMENT=${{ secrets.GITHUBTOKENUTILITY }}" >> $GITHUB_ENV
