@@ -59,4 +59,6 @@ jobs:
           app-name: 'yash-pgmanagement'
           slot-name: 'Production'
           package: '*.jar'
-          
+      
+      - name: Add PGMANAGEMENT secret
+        run: echo "PGMANAGEMENT=${{ secrets.PGMANAGEMENT }}" >> $GITHUB_ENV
