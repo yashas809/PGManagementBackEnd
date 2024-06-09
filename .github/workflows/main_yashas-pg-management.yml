@@ -22,6 +22,8 @@ jobs:
           java-version: '21'
 
       - name: Build with Maven
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUBTOKENUTILITY }}
         run: mvn clean install
 
       - name: Upload artifact for deployment job
