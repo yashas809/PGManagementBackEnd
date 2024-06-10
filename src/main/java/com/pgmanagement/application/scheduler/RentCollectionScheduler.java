@@ -11,7 +11,7 @@ public class RentCollectionScheduler {
     @Autowired
     RentCollectionService rentCollectionService;
 
-    @Scheduled(cron = "0 */2 * * * *")
+    @Scheduled(cron = "0 */10 * * * *")
     public void performTask() {
         System.out.println("Invoked Scheduler");
         rentCollectionService.addRentReminder();
